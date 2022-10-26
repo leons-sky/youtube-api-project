@@ -46,9 +46,30 @@ div4.classList.add("childCard3");
 div.append(div2, div3, div4);
 main.append(div);
 
-// e.g. of using getTrendingVideos():
-getTrendingVideos().then(videos => {
-    //videos list
-}).catch(err => {
-    //handle error
+//add video cards to webpage
+function displayVideos(videos) {
+    for (let video of videos) {
+        let element = document.createElement("article")
+        // add details
+        // append to grid
+    }
+}
+
+function search(input) {
+    getTrendingVideos().then(videos => {
+        let result = []
+        for (let video of videos) {
+            //title.includes(input)
+            //check video title with input
+            //add video to result if it matches
+        }
+        displayVideos(result)
+    }).catch(err => {
+        //handle error
+    })
+}
+
+const searchBar = document.getElementById("search")
+searchBar.addEventListener("input", () => {
+    search(searchBar.value)
 })
