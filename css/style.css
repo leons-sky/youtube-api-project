@@ -1,0 +1,40 @@
+body {
+	background-color: white;
+}
+
+h2 {
+	display: inline-block;
+}
+
+.header-styling {
+	display: inline;
+	justify-content: space-between;
+}
+
+.parentCard {
+	display: flex;
+	flex-wrap: nowrap;
+	height: 250px;
+	background-color: green;
+	grid-gap: 5px;
+}
+
+.childCard {
+	width: 40%;
+	height: 40%;
+
+	background-color: aqua;
+}
+
+.childCard2 {
+	width: 40%;
+	height: 40%;
+
+	background-color: palevioletred;
+}
+.childCard3 {
+	width: 40%;
+	height: 40%;
+
+	background-color: yellow;
+}
