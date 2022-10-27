@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>API Group Project</title>
-  </head>
-  <body>
-    <header>
-      header
-      <hr />
-    </header>
-
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/jwt-decode.js"></script>
+		<script src="https://apis.google.com/js/api.js"></script>
+		<script src="./js/api.js"></script>
+		<script src="./js/script.js" defer></script>
+		<script
+			src="https://accounts.google.com/gsi/client"
+			async
+			defer
+			onload="googleLoaded()"
+		></script>
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Group API Project</title>
+	</head>
+	<body>
+		<header>
+			<div id="google-account"></div>
+		</header>
+    
     <main>
       <div class="flexDiv-styling">
         <div class="vidCard">div2</div>
@@ -31,8 +40,9 @@
         <div class="statsDiv-styling">Stats for nerds</div>
       </div>
     </main>
-
+    
     <footer>footer</footer>
-    <script src="script.js"></script>
   </body>
 </html>
+
+

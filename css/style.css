@@ -14,6 +14,11 @@ h2 {
   color: black;
 }
 
+.hide {
+	display: none;
+	visibility: hidden;
+}
+
 .header-styling {
   display: inline;
   justify-content: space-between;
@@ -50,6 +55,10 @@ h2 {
   background-color: violet;
 }
 
+.videoText {
+  color: black;
+}
 
-
-/* Media queries */
+.greenButton {
+  background-color: green;
+}
