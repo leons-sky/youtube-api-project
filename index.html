@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>API Group Project</title>
-  </head>
-  <body>
-    <header></header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://apis.google.com/js/api.js"></script>
+		<script src="./js/api.js" defer></script>
+		<script src="./js/script.js" defer></script>
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Group API Project</title>
+	</head>
+	<body>
+		<div class="form-container">
+			<form class="form">
+				<input
+					id="search"
+					type="text"
+					class="input"
+					placeholder="search..."
+				/>
+				<button id="clear" class="clear-results">clear</button>
+			</form>
+		</div>
+		<div class="results-container">
+			<ul class="results-list" id="list"></ul>
+		</div>
 
-    <main></main>
+		<header></header>
 
-    <footer></footer>
-    <script src="script.js"></script>
-  </body>
+		<main></main>
+
+		<footer></footer>
+	</body>
 </html>
