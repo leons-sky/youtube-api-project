@@ -1,3 +1,4 @@
+// link to live server: http://localhost:5500/index.html
 
 // DOM header
 header = document.querySelector("header");
@@ -15,6 +16,12 @@ input.classList.add('header-styling')
 searchBtn.classList.add('header-styling')
 
 header.append(input, searchBtn, signInBtn, h2);
+
+signInBtn.addEventListener("click", () => {
+    signIn().then(() => {
+        console.log("Signed in!")
+    }).catch(console.error)
+})
 
 // DOM main
 main = document.querySelector("main");
@@ -49,26 +56,42 @@ main.append(div);
 //add video cards to webpage
 function displayVideos(videos) {
     for (let video of videos) {
-        let element = document.createElement("article")
-        // add details
-        // append to grid
+        const element = document.createElement("");
+
     }
 }
 
 function search(input) {
     getTrendingVideos().then(videos => {
         let result = []
+
         for (let video of videos) {
-            //title.includes(input)
-            //check video title with input
-            //add video to result if it matches
+            let title = video.snippet.title
+            let flag = false
+            if (title.includes(input)) {
+                flag = true
+            }
+
+            let tags = video.snippet.tags
+            if (tag.includes(input)) {
+                flag = true
+            }
+
+            let channelTitle = video.snippet.channelTitle
+            if (channelTitle.includes(input)) {
+                flag = true
+            }
+
+            if (flag()) result.push(video)
         }
+
         displayVideos(result)
     }).catch(err => {
-        //handle error
+        "Input not valid"
     })
 }
 
+// link search to searchbar
 const searchBar = document.getElementById("search")
 searchBar.addEventListener("input", () => {
     search(searchBar.value)
