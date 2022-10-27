@@ -6,8 +6,6 @@ const h2 = document.createElement("h2");
 h2.innerHTML = "YouTube Database Query" + `<hr>`;
 const input = document.createElement('input')
 const searchBtn = document.createElement('button')
-const signInBtn = document.createElement('button')
-signInBtn.innerHTML = 'Sign In'
 searchBtn.innerHTML = 'Search'
 input.setAttribute('type', 'text')
 input.setAttribute('placeholder', 'search')
@@ -15,21 +13,10 @@ h2.classList.add('header-styling')
 input.classList.add('header-styling')
 searchBtn.classList.add('header-styling')
 
-header.append(input, searchBtn, signInBtn, h2);
-
-signInBtn.addEventListener("click", () => {
-    signIn().then(() => {
-        console.log("Signed in!")
-    }).catch(console.error)
-})
+header.append(input, searchBtn, h2);
 
 // DOM main
 main = document.querySelector("main");
-
-// Search bar - form
-// queryForm.id = "new-query-form"
-// const label = document.createElement('label')
-
 
 // Appending
 
@@ -54,45 +41,45 @@ div.append(div2, div3, div4);
 main.append(div);
 
 //add video cards to webpage
-function displayVideos(videos) {
-    for (let video of videos) {
-        const element = document.createElement("");
+// function displayVideos(videos) {
+//     for (let video of videos) {
+//         const element = document.createElement("");
 
-    }
-}
+//     }
+// }
 
-function search(input) {
-    getTrendingVideos().then(videos => {
-        let result = []
+// function search(input) {
+//     getTrendingVideos().then(videos => {
+//         let result = []
 
-        for (let video of videos) {
-            let title = video.snippet.title
-            let flag = false
-            if (title.includes(input)) {
-                flag = true
-            }
+//         for (let video of videos) {
+//             let title = video.snippet.title
+//             let flag = false
+//             if (title.includes(input)) {
+//                 flag = true
+//             }
 
-            let tags = video.snippet.tags
-            if (tag.includes(input)) {
-                flag = true
-            }
+//             let tags = video.snippet.tags
+//             if (tag.includes(input)) {
+//                 flag = true
+//             }
 
-            let channelTitle = video.snippet.channelTitle
-            if (channelTitle.includes(input)) {
-                flag = true
-            }
+//             let channelTitle = video.snippet.channelTitle
+//             if (channelTitle.includes(input)) {
+//                 flag = true
+//             }
 
-            if (flag()) result.push(video)
-        }
+//             if (flag()) result.push(video)
+//         }
 
-        displayVideos(result)
-    }).catch(err => {
-        "Input not valid"
-    })
-}
+//         displayVideos(result)
+//     }).catch(err => {
+//         console.error(err)
+//     })
+// }
 
-// link search to searchbar
-const searchBar = document.getElementById("search")
-searchBar.addEventListener("input", () => {
-    search(searchBar.value)
-})
+// // link search to searchbar
+// const searchBar = document.getElementById("search")
+// searchBar.addEventListener("input", () => {
+//     search(searchBar.value)
+// })

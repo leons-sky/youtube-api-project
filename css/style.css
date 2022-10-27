@@ -6,6 +6,11 @@ h2 {
 	display: inline-block;
 }
 
+.hide {
+	display: none;
+	visibility: hidden;
+}
+
 .header-styling {
 	display: inline;
 	justify-content: space-between;
