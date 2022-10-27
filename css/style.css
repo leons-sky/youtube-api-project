@@ -1,17 +1,17 @@
 body {
-  background-color: white;
+	background-color: white;
 }
 
 /* Header */
 
 .signInBtn-styling {
-  background-color: aqua;
-  position: absolute;
-  right: 10px;
+	background-color: aqua;
+	position: absolute;
+	right: 10px;
 }
 
 h2 {
-  color: black;
+	color: black;
 }
 
 .hide {
@@ -20,8 +20,8 @@ h2 {
 }
 
 .header-styling {
-  display: inline;
-  justify-content: space-between;
+	display: inline;
+	justify-content: space-between;
 }
 
 /* Main */
@@ -29,36 +29,35 @@ h2 {
 /* Parent */
 
 .flexDiv-styling {
-  display: grid;
-  grid-template-rows: repeat(auto-fill, 200px);
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: white; 
-  grid-gap: 10px;
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 200px);
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	background-color: white;
+	grid-gap: 10px;
 }
 
 /* Children */
 /* Affects first div inside grid */
-.flexDiv-styling div:first-child{
-  grid-area: span 2/span 2;
+.flexDiv-styling div:first-child {
+	grid-area: span 2 / span 2;
 }
 
 .vidCard {
-  display: flex;
-  flex-direction: row;
-  background-color: lightgray;
-  height: 100%;
-  min-height: 200px;
-
+	display: flex;
+	flex-direction: row;
+	background-color: lightgray;
+	height: 100%;
+	min-height: 200px;
 }
 
-.statsDiv-styling{
-  background-color: violet;
+.statsDiv-styling {
+	background-color: violet;
 }
 
 .videoText {
-  color: black;
+	color: black;
 }
 
 .greenButton {
-  background-color: green;
+	background-color: green;
 }

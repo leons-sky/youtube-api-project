@@ -7,11 +7,11 @@ h2.innerHTML = "YouTube Database Query" + `<hr>`;
 const input = document.createElement('input')
 const searchBtn = document.createElement('button')
 searchBtn.innerHTML = 'Search'
-input.s
+// input.s
 input.setAttribute('type', 'text')
 input.setAttribute('placeholder', 'search')
 h2.classList.add('header-styling')
-input.classList.add('header-styling') 
+input.classList.add('header-styling')
 searchBtn.classList.add('header-styling')
 
 header.append(input, searchBtn, h2);
@@ -53,22 +53,22 @@ function displayVideos(videos) {
         //text.classList.add("videoText")
         text.append(video.snippet.title)
         text.classList.add("videoText")
-        
 
-         // creating the like button, establishing an event listener
-         //when the button is triggered it turns green and back to white (toggle function)
-         const like = document.createElement('button')
+
+        // creating the like button, establishing an event listener
+        //when the button is triggered it turns green and back to white (toggle function)
+        const like = document.createElement('button')
         //like.setAttribute("onclick",)
         like.append('Like')
         element.append(img, text, like)
         div.append(element)
-        
-         
+
+
         like.addEventListener("click", () => {
             like.classList.toggle("greenButton")
         })
         // when clicked (event listener) function, add the button to a class list and toggle the color
-        
+
         img.addEventListener("click", () => {
             const url = "https://www.youtube.com/watch?v=" + video.id
             window.location.href = url;
@@ -76,7 +76,7 @@ function displayVideos(videos) {
         })
     }
 
-} 
+}
 // Cycles through array of top 50 trending videos.
 function search(input) {
     getTrendingVideos().then(videos => {
@@ -94,12 +94,12 @@ function search(input) {
             //search function cycles through array of tags per video.
             //array can be 
             let tags = video.snippet.tags ?? []
-            for(let tag of tags){
+            for (let tag of tags) {
                 if (tag.toLowerCase().includes(input.toLowerCase())) {
                     flag = true
                 }
             }
-          
+
             let channelTitle = video.snippet.channelTitle
             if (channelTitle.toLowerCase().includes(input.toLowerCase())) {
                 flag = true
@@ -110,7 +110,7 @@ function search(input) {
 
         displayVideos(result)
     }).catch(err => {
-       console.log( err )
+        console.log(err)
     })
 
 }
