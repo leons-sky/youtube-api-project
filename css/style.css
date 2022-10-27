@@ -11,7 +11,7 @@ body {
 }
 
 h2 {
-  color: pink;
+  color: black;
 }
 
 .hide {
@@ -26,58 +26,39 @@ h2 {
 
 /* Main */
 
+/* Parent */
+
 .flexDiv-styling {
   display: grid;
-  grid-template-rows: 630px;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: yellow;
+  grid-template-rows: repeat(auto-fill, 200px);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: white; 
   grid-gap: 10px;
 }
 
-.childCard {
-  display: flex;
-  width: 700px;
-  height: 480px;
-  flex: 1;
-  flex-direction: row;
-  background-color: lightblue;
+/* Children */
+/* Affects first div inside grid */
+.flexDiv-styling div:first-child{
+  grid-area: span 2/span 2;
 }
 
-.childCard2 {
+.vidCard {
   display: flex;
-  width: 490px;
-  height: 250px;
-  flex: 1;
   flex-direction: row;
-  background-color: palevioletred;
-}
-.childCard3 {
-  display: flex;
-  width: 490px;
-  height: 250px;
-  flex: 1;
-  flex-direction: row;
-  background-color: green;
+  background-color: lightgray;
+  height: 100%;
+  min-height: 200px;
+
 }
 
-.childCard5 {
-  display: flex;
-  width: 490px;
-  height: 250px;
-  flex: 1;
-
-  background-color: yellowgreen;
+.statsDiv-styling{
+  background-color: violet;
 }
 
 .videoText {
- 
   color: black;
-
 }
 
 .greenButton {
   background-color: green;
 }
-
-/* Media queries */
-
