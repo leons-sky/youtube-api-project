@@ -6,8 +6,6 @@ const h2 = document.createElement("h2");
 h2.innerHTML = "YouTube Database Query" + `<hr>`;
 const input = document.createElement('input')
 const searchBtn = document.createElement('button')
-const signInBtn = document.createElement('button')
-signInBtn.innerHTML = 'Sign In'
 searchBtn.innerHTML = 'Search'
 input.s
 input.setAttribute('type', 'text')
@@ -16,21 +14,10 @@ h2.classList.add('header-styling')
 input.classList.add('header-styling') 
 searchBtn.classList.add('header-styling')
 
-header.append(input, searchBtn, signInBtn, h2);
-
-signInBtn.addEventListener("click", () => {
-    signIn().then(() => {
-        console.log("Signed in!")
-    }).catch(console.error)
-})
+header.append(input, searchBtn, h2);
 
 // DOM main
 main = document.querySelector("main");
-
-// Search bar - form
-// queryForm.id = "new-query-form"
-// const label = document.createElement('label')
-
 
 // Appending
 
@@ -134,4 +121,3 @@ input.addEventListener("input", () => {
 
 
 // do suggested vide
-

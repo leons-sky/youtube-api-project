@@ -14,6 +14,11 @@ h2 {
   color: pink;
 }
 
+.hide {
+	display: none;
+	visibility: hidden;
+}
+
 .header-styling {
   display: inline;
   justify-content: space-between;
