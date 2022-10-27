@@ -1,0 +1,67 @@
+body {
+  background-color: white;
+}
+
+/* Header */
+
+.signInBtn-styling {
+  background-color: aqua;
+  position: absolute;
+  right: 10px;
+}
+
+h2 {
+  color: pink;
+}
+
+.header-styling {
+  display: inline;
+  justify-content: space-between;
+}
+
+/* Main */
+
+.flexDiv-styling {
+  display: grid;
+  grid-template-rows: 630px;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: yellow;
+  grid-gap: 10px;
+}
+
+.childCard {
+  display: flex;
+  width: 700px;
+  height: 480px;
+  flex: 1;
+  flex-direction: row;
+  background-color: lightblue;
+}
+
+.childCard2 {
+  display: flex;
+  width: 490px;
+  height: 250px;
+  flex: 1;
+  flex-direction: row;
+  background-color: palevioletred;
+}
+.childCard3 {
+  display: flex;
+  width: 490px;
+  height: 250px;
+  flex: 1;
+  flex-direction: row;
+  background-color: green;
+}
+
+.childCard5 {
+  display: flex;
+  width: 490px;
+  height: 250px;
+  flex: 1;
+
+  background-color: yellowgreen;
+}
+
+/* Media queries */
