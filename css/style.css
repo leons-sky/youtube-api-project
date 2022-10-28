@@ -196,6 +196,7 @@ main {
 #search-message {
 	margin: 0;
 	text-align: center;
+	color: var(--black);
 }
 
 /* Parent */
