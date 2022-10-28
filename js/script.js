@@ -12,7 +12,7 @@ function displayVideos(videos) {
 
         //adding the img to card. img's from snippet array 
         const img = document.createElement("img")
-        img.src = video.snippet.thumbnails.high.url
+        img.src = video.snippet.thumbnails.maxres.url
         const text = document.createElement("h3")
 
         //text.classList.add("videoText")
