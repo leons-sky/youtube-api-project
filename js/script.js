@@ -23,13 +23,13 @@ function displayVideos(videos) {
         const like = document.createElement('button')
         like.append('Like')
         element.append(img, text, like)
-        div.append(element)
+        videosContainer.append(element)
 
         //when the button is triggered it turns green and back to white (toggle function)
         like.addEventListener("click", () => {
             like.classList.toggle("greenButton")
         })
-    
+
         //when img of video is clicked, it will create a link via const url, and add the video.id number
         img.addEventListener("click", () => {
             const url = "https://www.youtube.com/watch?v=" + video.id
@@ -38,7 +38,7 @@ function displayVideos(videos) {
     }   //NEED TO FIND WAY TO ADD NEW WINDOW 
     // Styling search results (when searched)
 
-} 
+}
 // Search function 
 function search(input) {
     getTrendingVideos().then(videos => {
@@ -61,7 +61,7 @@ function search(input) {
                     flag = true
                 }
             }
-          //search function will function against the channel title array against all character cases.
+            //search function will function against the channel title array against all character cases.
             let channelTitle = video.snippet.channelTitle
             if (channelTitle.toLowerCase().includes(input.toLowerCase())) {
                 flag = true
