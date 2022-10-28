@@ -151,6 +151,7 @@ function search(input) {
         // if search is no true - result err 
         if (result.length === 0) {
             alert('No video can be found. Soz.')
+            return
         }
         displayVideos(result)
     }).catch(err => {

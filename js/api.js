@@ -9,19 +9,15 @@ function isLocalhost() {
 {
     // Some constants that google needs
     const CLIENT_ID = "475936740013-ff85n1pgbi3226foeeu8b0rudohgt4lb.apps.googleusercontent.com"
-    const API_KEY = "AIzaSyBqJritqPtAKwD4j3bnWgnjcccgaumjzAk"
     let tokenClient, access_token, userData;
     let signInButton, messageEl;
-
-    // Load the google api client onto the webpage
-    gapi.load("client")
 
     // loads the youtube api using either your google account id or the project api key
     function loadClient(token) {
         console.log("load client")
 
         if (isLocalhost()) {
-            gapi.client.setApiKey(API_KEY)
+            gapi.client.setApiKey("AIzaSyBqJritqPtAKwD4j3bnWgnjcccgaumjzAk") // DO NOT STEAL :)
         } else {
             gapi.client.setToken(token)
         }
@@ -41,69 +37,66 @@ function isLocalhost() {
 
     // when the webpage loads and the google authentication client has loaded we can start
     function googleLoaded() {
-        // get the div where the google signin button should be placed
-        let googleAccountBar = document.querySelector("#google-account")
-        messageEl = document.querySelector("#search-message")
+        // Load the google api client onto the webpage
+        gapi.load("client", () => {
+            // get the div where the google signin button should be placed
+            let googleAccountBar = document.querySelector("#google-account")
+            messageEl = document.querySelector("#search-message")
 
-        if (isLocalhost()) {
-            // if we can't login to google then show this message
-            const message = document.createElement("h3")
-            message.append("Functionality is limited on localhost")
-            googleAccountBar.append(message)
+            if (isLocalhost()) {
+                // if we can't login to google then show this message
+                const message = document.createElement("h3")
+                message.append("Functionality is limited on localhost")
+                googleAccountBar.append(message)
 
-            // load the youtube client using the api key
-            loadClient()
-        } else {
-            messageEl.innerHTML = "Please sign in!"
-            messageEl.classList.remove("hide")
-            // setup the google client for logging a user in
-            tokenClient = google.accounts.oauth2.initTokenClient({
-                client_id: CLIENT_ID,
-                prompt: "consent",
-                scope: "https://www.googleapis.com/auth/youtube.readonly \ https://www.googleapis.com/auth/youtube.force-ssl",
-                callback: (res) => {
-                    console.log("Success:", res)
-                    signInButton.classList.add("hide")
-                    // signOutButton.classList.remove("hide")
-                    access_token = res.access_token
-                    console.log(res)
-                    loadClient(res)
-                },
-                error_callback: (err) => {
-                    console.error("Error:", err)
-                }
-            });
+                // load the youtube client using the api key
+                loadClient()
+            } else {
+                messageEl.innerHTML = "Please sign in!"
+                messageEl.classList.remove("hide")
+                // setup the google client for logging a user in
+                tokenClient = google.accounts.oauth2.initTokenClient({
+                    client_id: CLIENT_ID,
+                    prompt: "consent",
+                    scope: "https://www.googleapis.com/auth/youtube.readonly \ https://www.googleapis.com/auth/youtube.force-ssl",
+                    callback: (res) => {
+                        console.log("Success:", res)
+                        signInButton.classList.add("hide")
+                        // signOutButton.classList.remove("hide")
+                        access_token = res.access_token
+                        console.log(res)
+                        loadClient(res)
+                    },
+                    error_callback: (err) => {
+                        console.error("Error:", err)
+                    }
+                });
 
-            // tell google what the project is and how we want to handle user data when we login
-            google.accounts.id.initialize({
-                client_id: CLIENT_ID,
-                callback: (res) => {
-                    let decoded = jwt_decode(res.credential)
-                    userData = decoded
-                    console.log(userData)
+                // tell google what the project is and how we want to handle user data when we login
+                google.accounts.id.initialize({
+                    client_id: CLIENT_ID,
+                    callback: (res) => {
+                        let decoded = jwt_decode(res.credential)
+                        userData = decoded
+                        console.log(userData)
 
-                    getConsent()
-                }
-            })
-            // add the google signin button to the webpage
-            google.accounts.id.renderButton(googleAccountBar, {
-                type: "standard",
-                theme: "filled_blue",
-                size: "medium",
-                text: "signin",
-                logo_alignment: "left"
-            })
-            // prompt the user to sign in when the page loads
-            google.accounts.id.prompt()
+                        getConsent()
+                    }
+                })
+                // add the google signin button to the webpage
+                google.accounts.id.renderButton(googleAccountBar, {
+                    type: "standard",
+                    theme: "filled_blue",
+                    size: "medium",
+                    text: "signin",
+                    logo_alignment: "left"
+                })
+                // prompt the user to sign in when the page loads
+                google.accounts.id.prompt()
 
-            signInButton = googleAccountBar.querySelector("div")
-            // signOutButton = document.createElement("button")
-            // signOutButton.classList.add("hide")
-            // signOutButton.append("Revoke Consent")
-            // googleAccountBar.append(signOutButton)
-
-            // signOutButton.addEventListener("click", revokeConsent)
-        }
+                signInButton = googleAccountBar.querySelector("div")
+            }
+        })
     }
 
     // used to ask the user for consent to access their youtube account
