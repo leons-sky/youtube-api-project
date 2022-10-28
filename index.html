@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="./js/jwt-decode.js"></script>
+		<script src="https://apis.google.com/js/api.js"></script>
+		<script src="./js/api.js"></script>
+		<script src="./js/script.js" defer></script>
+		<script
+			src="https://accounts.google.com/gsi/client"
+			async
+			defer
+			onload="googleLoaded()"
+		></script>
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Group API Project</title>
+	</head>
+	<body class="">
+		<section>
+			<header>
+				<div id="google-account"></div>
+				<h1>New YouTube Trending</h1>
+				<section class="searchbar">
+					<input type="search" id="search" placeholder="Search..." />
+				</section>
+				<!-- Toggle -->
+				<div id="theme-toggle" class="theme-toggle"></div>
+			</header>
+			<hr />
+			<main>
+				<section id="tabs"></section>
+				<h3 id="search-message" class="hide"></h3>
+				<section id="videos" class="flexDiv-styling"></section>
+			</main>
+		</section>
+
+		<footer>
+			<p>
+				Created By Google's Not Fun Corp. Inc. Ltd.&nbsp ©️ 2022<br />We
+				take your Cookies and feed them to the cookie monster
+			</p>
+			<p style="text-align: center">
+				Terms and Conditions | English | Cymraeg | Privacy Information
+				Notice | Accessibility
+			</p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+Search Function:
+- User can search the desired video in relevance to title, the array of tags the videos associates with 
+as well as the channel name. The search function can be utlised through a any character case when the 
+user makes an initial query. 
+
+- Show example Adele, adele, and "Drink Wine" (shows search bar can be utilised using different character cases, tags and title)
+
+Sign In Button:
+
+- The user can sign into their live Google account, when actions are taken (such as liking a video) the like will associate with the users account. 
+
+Like Button:
+- Like button toggles green, when pressed it generates another like on the live video. Linked using the YouTube api. 
+
+Link to video:
+- Clicking on an image of a video will take you to the video page on youtube.
+
+Tabs:
+- User can switch between different tabs to see the top 50 videos for a certain catagory.
+
+- Show example when clicking on the "Trending" tab it will show the top 50 trending youtube videos and the "Multiverse" tab will show the
+top 50 uploads from the multiverse youtube channel.
+
+Light and Dark theme toggle:
+- Clicking the toggle button switches between a light theme and a dark theme
+
+- Show example
+
+Displaying Video Staistics:
+The card will show a live feed of the amount of likes, comments and views asssociated with the video.
+
